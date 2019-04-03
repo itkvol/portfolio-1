@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import "./SignUp.css";
 class SignUp extends Component {
     state = {
         email: "",
@@ -27,38 +27,41 @@ class SignUp extends Component {
     }
     render(){
         return(
+            <div className="sign-up">
+
             <div className="container">
             <form onSubmit={this.handleSubmit}>
                 <h5 className="grey-text text-darken-3">Sign Up</h5>
                 <div className="input-field">
                 <label htmlFor="email">E-mail</label>
-                <input type="email" id="email" onChange={this.handleChange} value={this.state.email}/>
+                <input type="email" id="email" className="validate" onChange={this.handleChange} value={this.state.email}/>
                 </div>
 
                 <div className="input-field">
                 <label htmlFor="password">Passsword</label>
-                <input type="password" id="password" onChange={this.handleChange} value={this.state.password}/>
+                <input type="password" id="password" className="validate" onChange={this.handleChange} value={this.state.password}/>
                 </div>
 
                 <div className="input-field">
                 <label htmlFor="firstname">First Name</label>
-                <input type="text" id="firstName" onChange={this.handleChange} value={this.state.firstName}/>
+                <input type="text" id="firstName" className="validate" onChange={this.handleChange} value={this.state.firstName}/>
                 </div>
 
                 <div className="input-field">
                 <label htmlFor="lastname">Last Name</label>
-                <input type="text" id="lastName" onChange={this.handleChange} value={this.state.lastName}/>
+                <input type="text" id="lastName" className="validate" onChange={this.handleChange} value={this.state.lastName}/>
                 </div>
 
                 <div className="input-field">
                 <label htmlFor="phone">Phone</label>
-                <input type="tel" id="phone" onChange={this.handleChange} value={this.state.phone}/>
+                <input type="tel" id="phone" className="validate" onChange={this.handleChange} value={this.state.phone}/>
                 </div>
 
                 <div className="input-field">
-                <button className="btn orange lighten-1 z-depth-0">Sign Up</button>
+                <button className="btn orange lighten-1 waves-effect waves-light">Sign Up</button>
                 </div>
             </form>
+            </div>
             </div>
         )
     }

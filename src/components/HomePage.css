@@ -1,0 +1,28 @@
+.body-home {
+    margin-top: 64px;
+    height: 800px;
+    background: url(/img/road-1072823_960_720.jpg) no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    margin-top: 0;
+    padding-top: 40px;
+}
+
+#download-button {
+    width: 260px;
+    height: 70px;
+    margin: 4px;
+    padding: 0;
+    line-height: 70px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.body-wrapper {
+    height: 800px;
+    background-color: rgba(255, 255, 255, 0.5);
+    
+    
+}

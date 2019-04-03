@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-
+import CreateComment from "../comments/CreateComment";
+import "./Dashboard.css";
 class Dashboard extends Component {
     render(){
         return(
+            <div className="dashboard-wrapper">
             <div className="dashboard container">
                 <div className="row">
                     <div className="col s12 m6">
@@ -11,11 +13,15 @@ class Dashboard extends Component {
                         </p>
                     </div>
                     <div className="col s12 m5 offset-m1">
-                        <p>
-                        Cras suscipit, nisi vitae dignissim feugiat, massa metus blandit nunc, ut fermentum odio eros quis dui. Vivamus enim nibh, blandit in condimentum sed, convallis dignissim elit. Curabitur rhoncus, ex non ornare bibendum, ligula dolor malesuada sapien, ut faucibus eros nunc viverra augue. Maecenas viverra mauris non nisl ultrices aliquet. Sed pretium nisi a lacus hendrerit, ac posuere neque porta. Aenean in sollicitudin eros, vitae mattis augue. Vivamus pretium purus erat, tristique eleifend nulla vehicula sit amet. Aenean nec ligula dui.
-                        </p>
+                        
+                    <div>
+                        <CreateComment />
+
+                    </div>
                     </div>
                 </div>
+            </div>
+
             </div>
         )
     }
