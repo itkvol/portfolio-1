@@ -8,7 +8,7 @@ class Homepage extends Component {
             <div className="body-home">
                 <div className="body-wrapper">
                     <div className="container center">
-                        <h1 className="grey-text text-darken-3">Welcome to Homepage</h1>
+                        <h1>Welcome to Homepage</h1>
                         <div>
                             <NavLink to="/signin"><button id="download-button" className="btn-large orange lighten-1 waves-effect waves-light">Get Started</button></NavLink>
                         </div>

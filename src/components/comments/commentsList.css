@@ -1,0 +1,11 @@
+.comments-list-wrapper {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.collection .collection-item.avatar{
+    min-height: 50px;
+}
+
+.collection-item.avatar > strong {
+    color: #C62828;
+}

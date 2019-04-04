@@ -33,27 +33,27 @@ class SignUp extends Component {
             <form onSubmit={this.handleSubmit}>
                 <h5 className="grey-text text-darken-3">Sign Up</h5>
                 <div className="input-field">
-                <label htmlFor="email">E-mail</label>
+                <label htmlFor="email" className="grey-text text-darken-3" >E-mail</label>
                 <input type="email" id="email" className="validate" onChange={this.handleChange} value={this.state.email}/>
                 </div>
 
                 <div className="input-field">
-                <label htmlFor="password">Passsword</label>
+                <label htmlFor="password" className="grey-text text-darken-3">Passsword</label>
                 <input type="password" id="password" className="validate" onChange={this.handleChange} value={this.state.password}/>
                 </div>
 
                 <div className="input-field">
-                <label htmlFor="firstname">First Name</label>
+                <label htmlFor="firstname" className="grey-text text-darken-3">First Name</label>
                 <input type="text" id="firstName" className="validate" onChange={this.handleChange} value={this.state.firstName}/>
                 </div>
 
                 <div className="input-field">
-                <label htmlFor="lastname">Last Name</label>
+                <label htmlFor="lastname" className="grey-text text-darken-3">Last Name</label>
                 <input type="text" id="lastName" className="validate" onChange={this.handleChange} value={this.state.lastName}/>
                 </div>
 
                 <div className="input-field">
-                <label htmlFor="phone">Phone</label>
+                <label htmlFor="phone" className="grey-text text-darken-3">Phone</label>
                 <input type="tel" id="phone" className="validate" onChange={this.handleChange} value={this.state.phone}/>
                 </div>
 

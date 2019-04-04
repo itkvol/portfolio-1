@@ -27,13 +27,13 @@ class SignIn extends Component {
             <form onSubmit={this.handleSubmit}>
                 <h5 className="grey-text text-darken-3">Sign In</h5>
                 <div className="input-field">
-                <label htmlFor="email">E-mail</label>
+                <label htmlFor="email" className="grey-text text-darken-3">E-mail</label>
                 <input type="email" id="email" className="validate" onChange={this.handleChange} value={this.state.email}/>
                 
                 </div>
 
                 <div className="input-field">
-                <label htmlFor="password">Passsword</label>
+                <label htmlFor="password" className="grey-text text-darken-3">Passsword</label>
                 <input type="password" id="password" className="validate" onChange={this.handleChange} value={this.state.password}/>
                 </div>
 

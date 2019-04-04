@@ -1,3 +1,8 @@
+html {
+  min-height: 100%;
+  margin-top: 64px;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -6,7 +11,29 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
- 
+ background: url(/img/road-1072823_960_720.jpg) no-repeat;
+    background-size: cover;
+    min-height: 100%;
+}
+
+form {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px 40px;
+  
+}
+
+h1 {
+  
+  color: #C62828;
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=email]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]),
+input[type=tel]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]){
+  border-color: #C62828;
+  box-shadow: none;
 }
 
 code {

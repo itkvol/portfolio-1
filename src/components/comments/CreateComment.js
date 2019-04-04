@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { createComment } from './../../store/actions/commentsActions';
 
 class CreateComment extends Component {
     state = {
@@ -8,11 +10,12 @@ class CreateComment extends Component {
     }
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log(this.state);
-        this.setState({
-            title: "",
-            content: ""
-        })
+       
+      this.props.createComment(this.state)
+      this.setState({
+          title: "",
+          content: ""
+      })
     }
 
     handleChange = (event) => {
@@ -22,16 +25,16 @@ class CreateComment extends Component {
     }
     render(){
         return(
-            <div className="container">
+            
             <form onSubmit={this.handleSubmit}>
                 <h5 className="grey-text text-darken-3">Leave a comment</h5>
                 <div className="input-field">
-                <label htmlFor="title">Title</label>
+                <label htmlFor="title" className="grey-text text-darken-3">Title</label>
                 <input type="text" id="title" onChange={this.handleChange} value={this.state.title}/>
                 </div>
 
                 <div className="input-field">
-                <label htmlFor="content">Your comment</label>
+                <label htmlFor="content" className="grey-text text-darken-3">Your comment</label>
                 <textarea name="" id="content" cols="30" rows="10" className="materialize-textarea" onChange={this.handleChange} value={this.state.content}></textarea>
                 </div>
 
@@ -41,9 +44,13 @@ class CreateComment extends Component {
                 </button>
                 </div>
             </form>
-            </div>
+            
         )
     }
 }
-
-export default CreateComment;
+const mapDispatchToProps = (dispatch) => {
+    return{
+        createComment: (comment) => dispatch(createComment(comment))
+    }
+}
+export default connect(null, mapDispatchToProps)(CreateComment);
