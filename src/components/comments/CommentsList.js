@@ -1,10 +1,14 @@
 import React from 'react';
 import "./commentsList.css";
 
+
+
 const CommentsList = (props) => {
     let list = null;
-    props.comments.length ? 
-    list = props.comments.map(item => {
+    
+    
+    list = props.comments && props.comments.map(item => {
+        
         return (
 
             <li className="collection-item avatar" key={item.id}><i className="material-icons circle">folder</i>
@@ -14,8 +18,8 @@ const CommentsList = (props) => {
    
         )
 
-    }) :
-     list = <div className="card-panel center">You have no comments yet</div>
+    }) 
+   
     return (
         
             <div className="comments-list-wrapper">

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import SignedInLinks from './SignedInLinks';
 import SignedOutLinks from './SignedOutLinks';
@@ -9,7 +9,7 @@ import "materialize-css/dist/css/materialize.min.css";
 
 
 
-class Navbar extends Component {
+class Navbar extends React.Component {
    
  componentDidMount() {
      var elem = document.querySelectorAll(".sidenav");

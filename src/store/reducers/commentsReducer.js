@@ -15,15 +15,15 @@ const commentsReducer = (state = initState, action) => {
             
             case 'CREATE_COMMENT':
             console.log('created comment', action.comment);
-            break;
-            default: 
+            return state; 
+            
+            case 'CREATE_COMMENT_ERROR':
+            console.log('create comment error', action.error);
             return state;
-            
-            
-        }
-    
-    return state;
-    
+            default: 
+            return state;           
+
+        }  
 }
 
 export default commentsReducer;

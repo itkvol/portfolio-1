@@ -3,11 +3,14 @@ import CreateComment from "../comments/CreateComment";
 import "./Dashboard.css";
 import { connect } from 'react-redux';
 import CommentsList from '../comments/CommentsList';
+import { firestoreConnect } from 'react-redux-firebase';
+import { compose } from 'redux';
 
 class Dashboard extends Component {
     render() {
         
-        const comments = this.props.comments;
+        const { comments } = this.props;
+        
         return (
           <div className="dashboard-wrapper">
             <div className="dashboard container">
@@ -45,11 +48,21 @@ class Dashboard extends Component {
 }
 
 const mapStateToProps = (state) => {
+  
+  
+  return {
+          comments: state.firestore.ordered.comments
+      }
+    
+    
+  }
+    
 
-    return {
-        comments: state.comment.comments
-    }
 
-}
 
-export default connect(mapStateToProps)(Dashboard);
+export default compose(
+  connect(mapStateToProps),
+  firestoreConnect([
+    { collection: 'comments' }
+  ])
+)(Dashboard);
