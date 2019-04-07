@@ -1,22 +1,27 @@
 import React, { Component } from "react";
 import "./SignUp.css";
+import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { signUp } from './../../store/actions/authActions';
+
+
 class SignUp extends Component {
     state = {
         email: "",
         password: "",
         firstName: "",
         lastName: "",
-        phone: ""
+        
     }
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log(this.state);
+        this.props.signUp(this.state)
         this.setState({
             email: "",
             password: "",
             firstName: "",
             lastName: "",
-            phone: ""
+            
         })
     }
 
@@ -26,6 +31,9 @@ class SignUp extends Component {
         })
     }
     render(){
+        const { signUpError } = this.props;
+        const { auth } = this.props;
+        if (auth.uid) return <Redirect to="/dashboard" />
         return(
             <div className="sign-up">
 
@@ -39,7 +47,7 @@ class SignUp extends Component {
 
                 <div className="input-field">
                 <label htmlFor="password" className="grey-text text-darken-3">Passsword</label>
-                <input type="password" id="password" className="validate" onChange={this.handleChange} value={this.state.password}/>
+                <input type="password" id="password"  onChange={this.handleChange} value={this.state.password}/>
                 </div>
 
                 <div className="input-field">
@@ -53,12 +61,10 @@ class SignUp extends Component {
                 </div>
 
                 <div className="input-field">
-                <label htmlFor="phone" className="grey-text text-darken-3">Phone</label>
-                <input type="tel" id="phone" className="validate" onChange={this.handleChange} value={this.state.phone}/>
-                </div>
-
-                <div className="input-field">
                 <button className="btn orange lighten-1 waves-effect waves-light">Sign Up</button>
+                <div className="red-text center">
+                   <strong>{ signUpError ? <p>{signUpError}</p> : null}</strong> 
+                </div>
                 </div>
             </form>
             </div>
@@ -67,4 +73,17 @@ class SignUp extends Component {
     }
 }
 
-export default SignUp;
+const mapStateToProps = (state) => {
+    return {
+        signUpError: state.auth.signUpError,
+        auth: state.firebase.auth
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        signUp: (newUser) => dispatch(signUp(newUser))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);

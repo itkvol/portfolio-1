@@ -5,8 +5,8 @@ const SignedOutLinks = () => {
     return(
         <span>
        
-           <li><NavLink to="/signup">Signup</NavLink></li>
-           <li><NavLink to="/signin">Login</NavLink></li>
+           <li><NavLink to="/signup" className="sidenav-close">Signup</NavLink></li>
+           <li><NavLink to="/signin" className="sidenav-close">Login</NavLink></li>
 
         </span>
     )
