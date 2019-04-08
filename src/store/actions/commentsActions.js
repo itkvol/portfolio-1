@@ -1,4 +1,5 @@
 
+
 export const createComment = (comment) => {
     return (dispatch, getState, {getFirebase, getFirestore}) => {
         
@@ -18,6 +19,18 @@ export const createComment = (comment) => {
             dispatch({ type: 'CREATE_COMMENT', comment: comment });
         }).catch((error) => {
             dispatch({ type: 'CREATE_COMMENT_ERROR', error})
+        })
+    }
+};
+
+export const deleteComment = (id) => {
+    return (dispatch, getState, {getFirestore}) => {
+        const firestore = getFirestore();
+
+        firestore.collection('comments').doc(id).delete().then(() => {
+            dispatch({type: 'DELETE_COMMENT'})
+        }).catch((error) => {
+            dispatch({ type: 'DELETE_COMMENT_ERROR', error})
         })
     }
 };

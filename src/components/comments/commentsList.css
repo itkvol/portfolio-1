@@ -10,7 +10,7 @@
     color: #C62828;
 }
 
-.collection-item.avatar > span {
+.collection-item.avatar > span.circle {
     
     font-size: 14px!important;
     line-height: 42px;

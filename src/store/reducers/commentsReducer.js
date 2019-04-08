@@ -20,6 +20,12 @@ const commentsReducer = (state = initState, action) => {
             case 'CREATE_COMMENT_ERROR':
             console.log('create comment error', action.error);
             return state;
+            case 'DELETE_COMMENT':
+            console.log('comment deleted');
+            return state;
+            case 'DELETE_COMMENT_ERROR':
+            console.log('delete comment error', action.error);
+            return state;
             default: 
             return state;           
 
