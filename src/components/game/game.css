@@ -1,0 +1,42 @@
+.game-wrapper {
+    padding-top: 35px;
+    height: 380px;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 10px;
+}
+
+.game {
+    width: 270px;
+    height: 270px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto
+}
+
+.cell {
+    width: 33.3%;
+    height: 33.3%;
+    border: 1px solid #757575;
+    font-size: 50px;
+    box-sizing: border-box;
+    line-height: 80px;
+    box-sizing: border-box;
+}
+
+.cell:hover {
+    background-color: rgba(235, 235, 235, 0.5);
+    transition: ease-in-out 0.20s;
+}
+
+button.reset {
+    margin: 20px;
+    margin-left: 0;
+    float: right;
+}
+
+#status {
+    padding: 5px 10px;
+    color: #424242;
+    font-size: 20px;
+    display: inline-block;
+}

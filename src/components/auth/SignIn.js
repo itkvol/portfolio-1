@@ -3,6 +3,7 @@ import "./SignIn.css";
 import { connect } from 'react-redux';
 import { signIn } from './../../store/actions/authActions';
 import { Redirect } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 class SignIn extends Component {
     state = {
@@ -12,11 +13,10 @@ class SignIn extends Component {
     }
     handleSubmit = (event) => {
         event.preventDefault();
-        this.props.signIn(this.state);
-        this.setState({
-            email: "",
-            password: ""
-        })
+        let email = this.state.email;
+        let password = this.state.password;
+        email && password && this.props.signIn(this.state);
+        
     }
 
     handleChange = (event) => {
@@ -33,24 +33,25 @@ class SignIn extends Component {
             <div className="sign-in">
             <div className="container">
             <form onSubmit={this.handleSubmit}>
-                <h5 className="grey-text text-darken-3">Sign In</h5>
+                <h5>Sign In</h5>
                 <div className="input-field">
-                <label htmlFor="email" className="grey-text text-darken-3">E-mail</label>
-                <input type="email" id="email" className="validate" onChange={this.handleChange} value={this.state.email}/>
+                <label htmlFor="email" className="grey-text text-darken-1">E-mail</label>
+                <input type="email" id="email" className="validate" onChange={this.handleChange} value={this.state.email} required/>
                 
                 </div>
 
                 <div className="input-field">
-                <label htmlFor="password" className="grey-text text-darken-3">Passsword</label>
-                <input type="password" id="password" className="validate" onChange={this.handleChange} value={this.state.password}/>
+                <label htmlFor="password" className="grey-text text-darken-1">Passsword</label>
+                <input type="password" id="password" className="validate" onChange={this.handleChange} value={this.state.password} required/>
                 </div>
 
                 <div className="input-field">
-                <button className="btn orange lighten-1 waves-effect waves-light">Login</button>
+                <button className="btn orange lighten-1 waves-effect waves-light">Log in</button>
                 <div className="red-text center">
                     <strong>{ authError ? <p>{authError}</p> : null}</strong>
                 </div>
                 </div>
+            <p className="grey-text text-darken-1">Don't have an account? <Link to="/signup">Sign up now</Link></p>
             </form>
             </div>
 

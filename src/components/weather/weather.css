@@ -1,0 +1,23 @@
+.weather-form {
+    background-image: url(./weather.jpg);
+    background-size: cover;
+}
+
+.weather-wrapper .weather-summary {
+    min-height: 81px;
+    background-color: #424242;
+    padding: 10px 40px;
+}
+
+.weather-form>h5 {
+    padding-left: 40px;
+    color: #fff;
+}
+
+.weather-wrapper .weather-summary p {
+    color: #fff;
+}
+
+.weather-wrapper .weather-summary span {
+    color: #ffa726;
+}

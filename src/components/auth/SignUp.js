@@ -15,14 +15,12 @@ class SignUp extends Component {
     }
     handleSubmit = (event) => {
         event.preventDefault();
-        this.props.signUp(this.state)
-        this.setState({
-            email: "",
-            password: "",
-            firstName: "",
-            lastName: "",
-            
-        })
+        let email = this.state.email;
+        let password = this.state.password;
+        let firstName = this.state.firstName;
+        let lastName = this.state.lastName;
+        email && password && firstName && lastName && this.props.signUp(this.state)
+       
     }
 
     handleChange = (event) => {
@@ -39,25 +37,25 @@ class SignUp extends Component {
 
             <div className="container">
             <form onSubmit={this.handleSubmit}>
-                <h5 className="grey-text text-darken-3">Sign Up</h5>
+                <h5>Sign Up</h5>
                 <div className="input-field">
-                <label htmlFor="email" className="grey-text text-darken-3" >E-mail</label>
-                <input type="email" id="email" className="validate" onChange={this.handleChange} value={this.state.email}/>
+                <label htmlFor="email" className="grey-text text-darken-1" >E-mail <span>*</span></label>
+                <input type="email" id="email" className="validate" onChange={this.handleChange} value={this.state.email} required/>
                 </div>
 
                 <div className="input-field">
-                <label htmlFor="password" className="grey-text text-darken-3">Passsword</label>
-                <input type="password" id="password"  onChange={this.handleChange} value={this.state.password}/>
+                <label htmlFor="password" className="grey-text text-darken-1">Passsword <span>*</span></label>
+                <input type="password" id="password"  onChange={this.handleChange} value={this.state.password} required/>
                 </div>
 
                 <div className="input-field">
-                <label htmlFor="firstname" className="grey-text text-darken-3">First Name</label>
-                <input type="text" id="firstName" className="validate" onChange={this.handleChange} value={this.state.firstName}/>
+                <label htmlFor="firstname" className="grey-text text-darken-1">First Name <span>*</span></label>
+                <input type="text" id="firstName" className="validate" onChange={this.handleChange} value={this.state.firstName} required/>
                 </div>
 
                 <div className="input-field">
-                <label htmlFor="lastname" className="grey-text text-darken-3">Last Name</label>
-                <input type="text" id="lastName" className="validate" onChange={this.handleChange} value={this.state.lastName}/>
+                <label htmlFor="lastname" className="grey-text text-darken-1">Last Name <span>*</span></label>
+                <input type="text" id="lastName" className="validate" onChange={this.handleChange} value={this.state.lastName} required/>
                 </div>
 
                 <div className="input-field">

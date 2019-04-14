@@ -1,0 +1,72 @@
+.welcome {
+    background-image: url(./../images/road-1072823_960_720.jpg);
+    background-size: cover;
+}
+
+.welcome .filter {
+    background-color: rgba(50, 50, 50, 0.5);
+    min-height: 440px;
+}
+
+#download-button {
+    width: 260px;
+    height: 70px;
+    margin: 50px 0;
+    padding: 0;
+    line-height: 70px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+#download-button:hover {
+    background-color: #ffcc80!important;
+}
+
+.welcome-wrapper {
+    padding: 70px 0;
+}
+
+.welcome-wrapper {
+    color: #fff;
+}
+
+.welcome-wrapper>h1 {
+    padding: 0;
+    margin: 0;
+}
+
+.welcome-wrapper>h5 {
+    margin: 0;
+}
+
+.promo-wrapper .row .col {
+    margin-bottom: 0;
+}
+
+.slider .indicators .indicator-item.active {
+    background-color: #ffa726;
+}
+
+.footer-wrapper {
+    background-color: #424242;
+    color: #ffcc80;
+    position: relative;
+}
+
+.bottom-line {
+    width: 100%;
+    height: 50px;
+    background-color: #212121;
+    text-align: center;
+    padding-top: 13px;
+}
+
+.footer-wrapper i {
+    padding: 5px;
+    border: 1px solid #ffcc80;
+    margin: 0 10px;
+}
+
+.footer-wrapper .row .col {
+    padding: 0 20px;
+}

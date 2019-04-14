@@ -1,46 +1,56 @@
-.comments-list-wrapper {
+.comments-list-wrapper>h5 {
     background-color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    padding-bottom: 15px;
 }
 
-.collection .collection-item.avatar{
+.collection .collection-item.avatar {
     min-height: 64px;
 }
 
-.collection-item.avatar > strong {
+.collection-item.avatar>strong {
     color: #C62828;
 }
 
-.collection-item.avatar > span.circle {
-    
+.collection-item.avatar>span.circle {
     font-size: 14px!important;
     line-height: 42px;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
-    
-
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
-.message-hover{
-    
+.message-hover {
     color: red;
     position: absolute;
     display: block;
     right: 0;
     top: 0;
-    opacity: 0;       
+    opacity: 0;
 }
 
-.collection-item.avatar:hover .message-hover{
-   
+.collection-item.avatar:hover .message-hover {
     color: red;
     position: absolute;
     display: block;
     right: 0;
     top: 0;
-    opacity: 1; 
-    transition: ease-in-out 0.20s;   
+    opacity: 1;
+    transition: ease-in-out 0.20s;
 }
 
-.collection-item.avatar:hover{
-    background-color: rgb(235,235,235);
-    transition: ease-in-out 0.20s; 
+.collection-item.avatar a {
+    color: red;
+}
+
+.collection-item.avatar:hover {
+    background-color: rgb(235, 235, 235);
+    transition: ease-in-out 0.20s;
+}
+
+.comments-list-wrapper.overflow {
+    max-height: 700px;
+    overflow: auto;
+}
+
+.comments-list-wrapper.overflow ul {
+    margin-top: 0;
 }

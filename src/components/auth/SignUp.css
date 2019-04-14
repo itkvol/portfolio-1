@@ -1,0 +1,9 @@
+.sign-up {
+    background-image: url(./../images/road-1072823_960_720.jpg);
+    background-size: cover;
+    min-height: 1000px;
+}
+
+form .input-field span {
+    color: red;
+}

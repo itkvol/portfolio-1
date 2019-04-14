@@ -1,42 +1,37 @@
 html {
-  min-height: 100%;
   margin-top: 64px;
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    margin-top: 56px;
+  }
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 
+  "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
- background: url(/img/road-1072823_960_720.jpg) no-repeat;
-    background-size: cover;
-    min-height: 100%;
+  -moz-osx-font-smoothing: grayscale;  
 }
 
 form {
   background-color: rgba(255, 255, 255, 0.7);
   padding: 20px 40px;
-  
 }
 
-h1 {
-  
-  color: #C62828;
-}
-
-input[type=text]:not(.browser-default):focus:not([readonly]),
-input[type=email]:not(.browser-default):focus:not([readonly]),
-input[type=password]:not(.browser-default):focus:not([readonly]),
-input[type=tel]:not(.browser-default):focus:not([readonly]),
-textarea.materialize-textarea:focus:not([readonly]){
-  border-color: #C62828;
-  box-shadow: none;
+input[type=text]:not(.browser-default):focus:not([readonly]), 
+input[type=email]:not(.browser-default):focus:not([readonly]), 
+input[type=password]:not(.browser-default):focus:not([readonly]), 
+input[type=tel]:not(.browser-default):focus:not([readonly]), 
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 2px solid!important;
+  border-color: #C62828!important;
+  box-shadow: none!important;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
