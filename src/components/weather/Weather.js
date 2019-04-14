@@ -21,7 +21,7 @@ class Weather extends Component {
     this.state.city && this.state.country
       ? axios
           .get(
-            `http://api.openweathermap.org/data/2.5/weather?q=${
+            `https://api.openweathermap.org/data/2.5/weather?q=${
               this.state.city
             },${
               this.state.country
