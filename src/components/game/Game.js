@@ -56,7 +56,7 @@ class Game extends Component {
       this.gameState.gameEnded = true;
       this.setState({
         winner: "draw",
-        winnerLine: "Drawn"
+        winnerLine: "Draw"
       });
     }
 

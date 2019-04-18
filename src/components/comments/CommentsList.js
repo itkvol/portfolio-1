@@ -10,18 +10,20 @@ const CommentsList = props => {
   list =
     props.comments &&
     props.comments.map(item => {
+     console.log(item);
+     console.log(props);
       const handleClick = id => {
-        props.deleteComment(id);
+        item.authorId === props.auth.uid && props.deleteComment(id);
       };
 
       return (
         <li
           className="collection-item avatar"
           key={item.id}
-          onClick={() => handleClick(item.id)}
+          
         >
-          <div className="message-hover">
-            <i className="material-icons">highlight_off</i>
+          <div className="message-hover" onClick={() => handleClick(item.id)}>
+          {props.auth.uid === item.authorId && <i className="material-icons">highlight_off</i>}
           </div>
           <span className="circle center white-text red darken-3">
             {item.authorFirstName[0]}
@@ -38,10 +40,10 @@ const CommentsList = props => {
         </li>
       );
     });
-
+    
   return (
     <div className="comments-list-wrapper overflow">
-      <h5 className="center">Comments List</h5>
+      
       <ul className="collection">{list}</ul>
     </div>
   );

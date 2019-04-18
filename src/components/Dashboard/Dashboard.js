@@ -19,11 +19,11 @@ class Dashboard extends Component {
         <div className="dashboard container">
           <div className="row">
             <div className="col s12 m6 gameplace">
-              <Game />
               <Weather />
+              <Game />
             </div>
             <div className="col s12 m6 offset">
-              <div>
+              <div className="comments-block">
                 <CreateComment />
                 <CommentsList comments={comments} auth={auth} />
               </div>

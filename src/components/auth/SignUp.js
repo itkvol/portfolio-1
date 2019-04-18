@@ -9,6 +9,7 @@ class SignUp extends Component {
     state = {
         email: "",
         password: "",
+        confirmPassword: "",
         firstName: "",
         lastName: "",
         
@@ -17,9 +18,10 @@ class SignUp extends Component {
         event.preventDefault();
         let email = this.state.email;
         let password = this.state.password;
+        let confirmPassword = this.state.confirmPassword;
         let firstName = this.state.firstName;
         let lastName = this.state.lastName;
-        email && password && firstName && lastName && this.props.signUp(this.state)
+        email && password && confirmPassword && password === confirmPassword && firstName && lastName && this.props.signUp(this.state)
        
     }
 
@@ -49,6 +51,11 @@ class SignUp extends Component {
                 </div>
 
                 <div className="input-field">
+                <label htmlFor="password" className="grey-text text-darken-1">Confirm passsword<span>*</span></label>
+                <input type="password" id="confirmPassword"  onChange={this.handleChange} value={this.state.confirmPassword} required/>
+                </div>
+
+                <div className="input-field">
                 <label htmlFor="firstname" className="grey-text text-darken-1">First Name <span>*</span></label>
                 <input type="text" id="firstName" className="validate" onChange={this.handleChange} value={this.state.firstName} required/>
                 </div>
@@ -61,7 +68,8 @@ class SignUp extends Component {
                 <div className="input-field">
                 <button className="btn orange lighten-1 waves-effect waves-light">Sign Up</button>
                 <div className="red-text center">
-                   <strong>{ signUpError ? <p>{signUpError}</p> : null}</strong> 
+                   <strong>{ signUpError ? <p>{signUpError}</p> : null}</strong>
+                   <strong>{ this.state.password !== this.state.confirmPassword && <p>Passwords not match</p>}</strong> 
                 </div>
                 </div>
             </form>

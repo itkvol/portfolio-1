@@ -12,6 +12,11 @@ const SignedInLinks = props => {
         </NavLink>
       </li>
       <li>
+        <NavLink to="/about" className="sidenav-close">
+          About
+        </NavLink>
+      </li>
+      <li>
         <NavLink to="" className="sidenav-close" onClick={props.signOut}>
           Log Out
         </NavLink>

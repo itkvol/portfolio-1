@@ -1,6 +1,11 @@
+.weather-wrapper{
+    margin: 20px 0;
+}
+
 .weather-form {
     background-image: url(./weather.jpg);
     background-size: cover;
+    
 }
 
 .weather-wrapper .weather-summary {
@@ -18,6 +23,17 @@
     color: #fff;
 }
 
+.weather-wrapper .weather-summary>p:first-child {
+    margin-bottom: 0;
+}
+.weather-wrapper .weather-summary>p:nth-child(2) {
+    margin-top: 3px;
+}
+
 .weather-wrapper .weather-summary span {
     color: #ffa726;
+}
+
+.weather-wrapper .weather-summary img {
+    margin-bottom: -20px;
 }

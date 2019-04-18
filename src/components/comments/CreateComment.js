@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { createComment } from "./../../store/actions/commentsActions";
+import "./commentsList.css";
 
 class CreateComment extends Component {
   state = {
@@ -23,6 +24,7 @@ class CreateComment extends Component {
   };
   render() {
     return (
+
       <form onSubmit={this.handleSubmit}>
         <h5>Leave a comment</h5>
 
@@ -43,6 +45,7 @@ class CreateComment extends Component {
           </button>
         </div>
       </form>
+      
     );
   }
 }

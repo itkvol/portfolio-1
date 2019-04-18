@@ -1,0 +1,27 @@
+.about-wrapper{
+    background-image: url("./../images/road-1072823_960_720.jpg");
+    background-size: cover;
+    min-height: 1000px;
+    position: relative;
+}
+
+.about-wrapper .container{
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 25px;
+}
+
+.about-footer {
+    background-color: #424242;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    min-height: 55px;
+    
+    width: 100%;
+}
+
+.about-footer i {
+    padding: 5px;
+    border: 1px solid #fff;
+    margin: 0 10px;
+}

@@ -14,7 +14,9 @@ class Weather extends Component {
     sunrise: null,
     sunset: null,
     error: false,
-    fillFields: false
+    fillFields: false,
+    countryCode: "",
+    icon: ""
   };
 
   weather = () => {
@@ -37,8 +39,12 @@ class Weather extends Component {
               sunrise: res.data.sys.sunrise,
               sunset: res.data.sys.sunset,
               error: false,
-              fillFields: false
+              fillFields: false,
+              countryCode: res.data.sys.country,
+              icon: res.data.weather[0].icon
             });
+            console.log(res);
+          
           })
           .catch(error => {
             this.setState({
@@ -88,15 +94,22 @@ class Weather extends Component {
         </div>
 
         <div className="weather-summary">
-          {this.state.temp && (
+          {this.state.temp && this.state.countryCode !== 'US' &&(
             <p>
               <span>Temperature: </span>{" "}
               {parseFloat(this.state.temp.toFixed(1))} &deg;C
             </p>
           )}
+          {this.state.temp && this.state.countryCode === 'US' &&(
+            <p>
+              <span>Temperature: </span>{" "}
+              {parseFloat((this.state.temp * 1.8 + 32).toFixed(1))} F ({parseFloat(this.state.temp.toFixed(1))} &deg;C)
+            </p>
+          )}
+          
           {this.state.cloudiness && (
             <p>
-              <span>Cloudiness: </span> {this.state.cloudiness}
+              <span>Cloudiness: </span> {this.state.cloudiness} <img src={`http://openweathermap.org/img/w/${this.state.icon}.png`} alt="cloudiness icon"/>
             </p>
           )}
           {this.state.humidity && (
@@ -109,9 +122,14 @@ class Weather extends Component {
               <span>Pressure:</span> {this.state.pressure} hpa
             </p>
           )}
-          {this.state.wind && (
+          {this.state.wind && this.state.countryCode !== 'US' &&(
             <p>
               <span>Wind:</span> {this.state.wind} m/s
+            </p>
+          )}
+          {this.state.wind && this.state.countryCode === 'US' &&(
+            <p>
+              <span>Wind:</span> {parseFloat((this.state.wind * 2.236).toFixed(1))} mph ({this.state.wind} m/s)
             </p>
           )}
           {this.state.sunrise && (
@@ -133,6 +151,7 @@ class Weather extends Component {
             </strong>
           </p>
         </div>
+        
       </div>
     );
   }

@@ -14,6 +14,11 @@ const SignedOutLinks = () => {
           Login
         </NavLink>
       </li>
+      <li>
+        <NavLink to="/about" className="sidenav-close">
+          About
+        </NavLink>
+      </li>
     </span>
   );
 };

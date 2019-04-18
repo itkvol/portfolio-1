@@ -37,6 +37,10 @@
     transition: ease-in-out 0.20s;
 }
 
+.message-hover>i:hover {
+    cursor: pointer;
+}
+
 .collection-item.avatar a {
     color: red;
 }
