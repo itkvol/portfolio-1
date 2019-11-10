@@ -10,8 +10,7 @@ const CommentsList = props => {
   list =
     props.comments &&
     props.comments.map(item => {
-     console.log(item);
-     console.log(props);
+     
       const handleClick = id => {
         item.authorId === props.auth.uid && props.deleteComment(id);
       };

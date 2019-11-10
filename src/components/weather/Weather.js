@@ -19,7 +19,23 @@ class Weather extends Component {
     icon: ""
   };
 
+  getUserLocation = () => {
+    axios
+          .get('http://ip-api.com/json')
+          .then(res => {
+            
+           
+            console.log("user's city: "+res.data.city);
+            console.log("user's country: "+res.data.country);
+          
+          })
+          .catch(error => {
+           console.log("oops, something went wrong "+error);
+          })
+  };
+  
   weather = () => {
+    this.getUserLocation();
     this.state.city && this.state.country
       ? axios
           .get(
@@ -70,6 +86,7 @@ class Weather extends Component {
   };
 
   render() {
+    
     return (
       <div className="weather-wrapper">
         <div className="weather-form">
