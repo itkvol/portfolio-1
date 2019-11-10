@@ -23,8 +23,6 @@ class Weather extends Component {
     axios
           .get('http://ip-api.com/json')
           .then(res => {
-            
-           
             console.log("user's city: "+res.data.city);
             console.log("user's country: "+res.data.country);
           
