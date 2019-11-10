@@ -25,6 +25,7 @@ class Weather extends Component {
           .then(res => {
             console.log("user's city: "+res.data.city);
             console.log("user's country: "+res.data.country);
+            console.log("user's country: "+res.data.country);
           
           })
           .catch(error => {
